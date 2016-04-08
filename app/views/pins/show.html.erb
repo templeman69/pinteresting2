@@ -1,26 +1,29 @@
-<div class="row">
-  <div class="col-md-offset-2 col-md-8">
-    <div class="panel panel-default">
-      <div class="panel-heading center">
-        <%= image_tag @pin.image.url(:medium) %>
-      </div>
-      <div class="panel-body">
-        <p><%= @pin.description %></p>
-        <p><strong><%= @pin.user.name if @pin.user %></strong></p>
+<div style="font-family: 'Montserrat', serif;">
+<div class="center">
+  <div class="row">
+    <div class="col-md-offset-2 col-md-8">
+      <div class="panel panel-default">
+        <div class="panel-heading center">
+          <%= image_tag @pin.image.url(:medium) %>
+        </div>
+        <div class="panel-body">
+          <p><%= @pin.description %></p>
+          <p><strong><%= @pin.user.name if @pin.user %></strong></p>
 
-        <% if current_user && @pin.user == current_user %>
-         <%= link_to edit_pin_path(@pin) do %>
-           <span class="glyphicon glyphicon-edit"></span>
-           Edit
+          <% if current_user && @pin.user == current_user %>
+           <%= link_to edit_pin_path(@pin) do %>
+             <span class="glyphicon glyphicon-edit"></span>
+             Edit
+            <% end %>
+           <%= link_to pins_path do %>
+           <span class="glyphicon glyphicon-arrow-left"></span>
+             Back
+            <% end %>
           <% end %>
-         <%= link_to pins_path do %>
-         <span class="glyphicon glyphicon-arrow-left"></span>
-           Back
-          <% end %>
-        <% end %>
 
+        </div>
       </div>
-    </div>
+    <div>
+
   </div>
-
 </div>
